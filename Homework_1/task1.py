@@ -3,14 +3,11 @@
 
 # Bubble sort (imperative style)
 def sort_list_imperative(numbers):
-    flag = True
-    while flag:
-        flag = False
-        for i in range(len(numbers) - 1):
-            if numbers[i] < numbers[i + 1]:
-                numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
-                flag = True
-    return numbers
+    for i in range(len(numbers) - 1):
+        for j in range(len(numbers) - i - 1):
+            if numbers[j] < numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+        return numbers
 
 
 print(f"Imperative style -> {sort_list_imperative([41, 6, 2, 7, -3, 2, 8, 56])}")
